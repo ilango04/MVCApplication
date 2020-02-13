@@ -14,16 +14,11 @@ namespace MVCApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-            name: "Student",
-            url: "{students}/{action}/{id}",
-            defaults: new { controller = "Student", action = "MarkIndex", id = UrlParameter.Optional }
+            name: "Default",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Customer", action = "IndexPassingData", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
         }
     }
 }

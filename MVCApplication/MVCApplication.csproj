@@ -107,8 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -126,11 +125,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Student\MarkIndex.cshtml" />
+    <Content Include="Views\Customer\IndexPassingData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -141,6 +139,19 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcApplication_DAL\MvcApplication_DAL.csproj">
+      <Project>{bf9f37d1-0d69-4a1e-b47f-6911d4a86b6f}</Project>
+      <Name>MvcApplication_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcApplication_EL\MvcApplication_EL.csproj">
+      <Project>{773f03c9-91f6-463e-bf60-ce3e6e544128}</Project>
+      <Name>MvcApplication_EL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
