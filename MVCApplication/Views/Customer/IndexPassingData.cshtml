@@ -3,11 +3,46 @@
     ViewBag.Title = "IndexPassingData";
 }
 
-<h2>IndexPassingData</h2>
-<h2>CustomerDetails</h2>
+<h2>CustomerDetails in ViewData</h2>
 <table border="1">
     <tr><td>CustomerName</td><td>Salary</td><td>Type</td></tr>
     @foreach (var value in (List<MvcApplication_EL.Customer>)ViewData["customers"])
+    {
+        <tr>
+            <td>
+                @value.name
+            </td>
+            <td>
+                @value.salary
+            </td>
+            <td>
+                @value.type
+            </td>
+        </tr>
+    }
+</table>
+<h2>CustomerDetails in TempData</h2>
+<table border="1">
+    <tr><td>CustomerName</td><td>Salary</td><td>Type</td></tr>
+    @foreach (var value in (List<MvcApplication_EL.Customer>)TempData["customers"])
+    {
+        <tr>
+            <td>
+                @value.name
+            </td>
+            <td>
+                @value.salary
+            </td>
+            <td>
+                @value.type
+            </td>
+        </tr>
+    }
+</table>
+<h2>CustomerDetails in ViewBag</h2>
+<table border="1">
+    <tr><td>CustomerName</td><td>Salary</td><td>Type</td></tr>
+    @foreach (var value in ViewBag.CustomerDetails)
     {
         <tr>
             <td>
