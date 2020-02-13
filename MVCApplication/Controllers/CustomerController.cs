@@ -11,15 +11,11 @@ namespace MVCApplication.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
-        public ActionResult Index()
-        {
-            IEnumerable<Customer> customers= new CustomerRepository().AddDetails();
-            return View("view",customers);
-        }
         public ActionResult IndexPassingData()
         {
             IEnumerable<Customer> customers = new CustomerRepository().AddDetails();
             ViewBag.CustomerDetails = customers;
+            TempData["customers"] = customers;
             ViewData["customers"] = customers;
             return View();
         }
