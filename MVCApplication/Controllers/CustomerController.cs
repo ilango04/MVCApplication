@@ -40,13 +40,9 @@ namespace MVCApplication.Controllers
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
-            // if(ModelState.IsValid)
-            //{
             new CustomerRepository().CreateRow(customer);
             TempData["Message"] = "Customer added";
             return RedirectToAction("Index");
-            //}
-            //return View(packageDetails);
         }
         public ActionResult Edit(int id)
         {
@@ -62,13 +58,9 @@ namespace MVCApplication.Controllers
         [HttpPost]
         public ActionResult Update(Customer customer)
         {
-            // if (ModelState.IsValid)
-            //{
             new CustomerRepository().UpdateCustomer(customer);
             TempData["Message"] = "Customer updated";
             return RedirectToAction("Index");
-            //}
-            //return View("Edit",packageDetails);
         }
     }
 }
