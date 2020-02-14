@@ -1,0 +1,30 @@
+﻿@model MvcApplication_EL.Customer
+
+@{
+    ViewBag.Title = "CheckingTempData";
+}
+
+<h2>CheckingTempData</h2>
+
+<h3>Package Details-TempData</h3>
+
+<table border="1">
+    <tr>
+        <td>Customer Name</td>
+        <td>Customer Salary</td>
+    </tr>
+    @foreach (MvcApplication_EL.Customer value in
+    (List<MvcApplication_EL.Customer>)TempData["customers"])
+    {
+        <tr>
+            <td>
+                @value.name
+            </td>
+            <td>
+                @value.salary
+            </td>
+        </tr>
+    }
+</table>
+
+© 2020 GitHub, Inc.

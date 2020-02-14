@@ -1,0 +1,41 @@
+﻿@model IEnumerable< MvcApplication_EL.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Create New Customer", "Create")
+<br />
+
+@if (TempData["customers"] != null)
+{
+    @Html.Label((string)TempData["customers"])
+}
+<h2>Package</h2>
+<table border="1">
+    <tr>
+        <td>Customer Name</td>
+        <td>Salary</td>
+        <td>Employment Type</td>
+        <td>Choice</td>
+    </tr>
+    @foreach (MvcApplication_EL.Customer value in (IEnumerable<MvcApplication_EL.Customer>)@Model)
+    {
+        <tr>
+            <td>
+                @value.name
+            </td>
+            <td>
+                @value.salary
+            </td>
+            <td>
+                @value.type
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = value.id })
+                @Html.ActionLink("Delete", "Delete", new { id = value.id })
+            </td>
+        </tr>
+    }
+</table>

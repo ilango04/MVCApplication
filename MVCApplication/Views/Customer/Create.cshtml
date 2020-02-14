@@ -1,0 +1,37 @@
+﻿@model MvcApplication_EL.Customer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("id")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.id)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.name)</td>
+            <td>@Html.EditorFor(Model => Model.name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.salary)</td>
+            <td>@Html.EditorFor(Model => Model.salary)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back to the list", "Index")
+            </td>
+            <td>
+                <input type="submit" id="Add" />
+            </td>
+        </tr>
+    </table>
+}
+

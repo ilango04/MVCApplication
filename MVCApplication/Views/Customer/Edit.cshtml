@@ -1,0 +1,38 @@
+﻿@model MvcApplication_EL.Customer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Update", "Customer", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.id)
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("name")
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("salary")
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.salary)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Cancel", "Index")
+            </td>
+            <td>
+                <input type="submit" value="Update" />
+            </td>
+        </tr>
+    </table>
+}

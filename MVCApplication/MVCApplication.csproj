@@ -129,6 +129,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Customer\IndexPassingData.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\CheckTempData.cshtml" />
+    <Content Include="Views\Customer\CheckingTempData.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
