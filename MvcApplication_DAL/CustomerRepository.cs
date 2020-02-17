@@ -1,11 +1,8 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MvcApplication_EL;
-
-
 namespace MvcApplication_DAL
 {
     public class CustomerRepository
@@ -13,6 +10,7 @@ namespace MvcApplication_DAL
         public static List<Customer> customerDetails = new List<Customer>();
         static CustomerRepository()
         {
+            
             customerDetails.Add(new Customer(1,"ilango", 25000, "salaried"));
             customerDetails.Add(new Customer(2,"Mahesh", 22000, "salaried"));
         }

@@ -15,6 +15,7 @@
 <h2>Package</h2>
 <table border="1">
     <tr>
+        <td>Customer_Id</td>
         <td>Customer Name</td>
         <td>Salary</td>
         <td>Employment Type</td>
@@ -23,6 +24,9 @@
     @foreach (MvcApplication_EL.Customer value in (IEnumerable<MvcApplication_EL.Customer>)@Model)
     {
         <tr>
+            <td>
+               @value.id
+            </td>
             <td>
                 @value.name
             </td>

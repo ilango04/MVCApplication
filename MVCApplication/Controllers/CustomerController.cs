@@ -33,16 +33,20 @@ namespace MVCApplication.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult CreatePostMethod()
         {
+            Customer customer = new Customer();
+            TryUpdateModel(customer);
             new CustomerRepository().CreateRow(customer);
             TempData["Message"] = "Customer added";
             return RedirectToAction("Index");
+        
         }
         public ActionResult Edit(int id)
         {
